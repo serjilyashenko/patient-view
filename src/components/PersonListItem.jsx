@@ -4,15 +4,20 @@ import PropTypes from 'prop-types';
 class PersonListItem extends Component {
 
   render() {
-    const {name, remark, photo, onClick} = this.props;
-    const remarkElement = remark ? <span> - {remark}</span> : null;
+    const {name, remark, photo, active, onClick} = this.props;
+    const remarkElement = remark ? <span>{remark}</span> : null;
+    const activeClass = active ? 'list-item_active' : '';
 
     return (
-      <div onClick={() => onClick()}>
-        <img src={photo} alt={name}/>
-        <div>
-          {name}
-          {remarkElement}
+      <div className={`list-item ${activeClass}`} onClick={() => onClick()}>
+        <img className="list-item__picture" src={photo} alt={name}/>
+        <div className="list-item__content">
+          <div className="list-item__title">
+            {name}
+          </div>
+          <div className="list-item__details">
+            {remarkElement}
+          </div>
         </div>
       </div>
     );

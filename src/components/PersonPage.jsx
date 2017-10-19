@@ -41,7 +41,6 @@ class PersonPage extends Component {
     return (
       <div>
         <PersonShortInfo person={activePerson}/>
-        <div style={{height: 50}}></div>
         <PersonDetails person={activePerson}/>
       </div>
     );
@@ -49,13 +48,14 @@ class PersonPage extends Component {
 
   render() {
     const {persons} = this.props;
+    const {activePersonId} = this.state;
 
     return (
-      <div style={{clear: 'both', overflow: 'hidden'}}>
-        <div style={{float: 'left', borderRight: '2px solid black', margin: 10}}>
-          <PersonList persons={persons} onSelectPerson={this.handleSelectPerson}/>
+      <div className="columns">
+        <div className="columns__left">
+          <PersonList persons={persons} activePerson={activePersonId} onSelectPerson={this.handleSelectPerson}/>
         </div>
-        <div style={{float: 'left', margin: 10}}>
+        <div className="columns__main">
           {this.renderPersonContent()}
         </div>
       </div>

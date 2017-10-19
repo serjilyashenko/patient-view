@@ -8,9 +8,20 @@ class PersonOverview extends Component {
 
     return (
       <div>
-        <div><b>Condition:</b> {condition}</div>
-        <div><b>Details:</b></div>
-        <div style={{maxWidth: 500}}>{about}</div>
+        <div className="property-block property-block_overview">
+          <div className="property-block__key">
+            Condition:
+          </div>
+          <div className="property-block__value">
+            {condition}
+          </div>
+        </div>
+        <div className="property-block property-block_overview">
+          <div className="property-block__key">
+            Details:
+          </div>
+          <div className="property-block__value property-block__value_block">{about}</div>
+        </div>
       </div>
     );
   }

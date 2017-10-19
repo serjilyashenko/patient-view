@@ -22,7 +22,7 @@ class PersonDetails extends Component {
     this.setState({activeIndex: tabIndex})
   }
 
-  getTsbsMap() {
+  getTabsMap() {
     const {condition, about} = this.props.person;
     return [
       {
@@ -45,11 +45,11 @@ class PersonDetails extends Component {
   }
 
   getTabLabels() {
-    return this.getTsbsMap().map(it => it.label);
+    return this.getTabsMap().map(it => it.label);
   }
 
   getTabContents() {
-    return this.getTsbsMap().map(it => it.content);
+    return this.getTabsMap().map(it => it.content);
   }
 
   render() {

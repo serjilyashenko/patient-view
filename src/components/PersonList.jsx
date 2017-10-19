@@ -5,10 +5,11 @@ import PersonItem from './PersonListItem';
 class PersonList extends Component {
 
   render() {
-    const {persons, onSelectPerson} = this.props;
+    const {persons, activePerson, onSelectPerson} = this.props;
     const patientElements = persons.map(({id, name, age, photo}) =>
       <PersonItem
         key={id}
+        active={activePerson === id}
         name={name}
         remark={age + ' years'}
         photo={photo}
@@ -16,8 +17,10 @@ class PersonList extends Component {
       />);
 
     return (
-      <div>
-        {patientElements}
+      <div className="list__wrapper">
+        <div className="list">
+          {patientElements}
+        </div>
       </div>
     );
   }
