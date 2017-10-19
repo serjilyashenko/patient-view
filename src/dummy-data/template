@@ -1,5 +1,5 @@
 [
-  '{{repeat(5, 9)}}',
+  '{{repeat(15, 9)}}',
   {
     id: '{{objectId()}}',
     balance: '{{floating(1000, 4000, 2, "$0,0.00")}}',
@@ -17,12 +17,15 @@
     registered: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
     latitude: '{{floating(-90.000001, 90)}}',
     longitude: '{{floating(-180.000001, 180)}}',
+    photo: function (id) {
+      return 'http://placeimg.com/120/120/animals/' + this.id;
+    },
     condition: function () {
-  var fruits = ['asthma', 'at risk', 'allergy', 'gastritis'];
-  var min = 0;
-  var max = fruits.length - 1;
-  var random = Math.round(Math.random() * (max - min) + min);
-  return fruits[random];
-}
-}
+      var fruits = ['asthma', 'at risk', 'allergy', 'gastritis'];
+      var min = 0;
+      var max = fruits.length - 1;
+      var random = Math.round(Math.random() * (max - min) + min);
+      return fruits[random];
+    }
+  }
 ]
