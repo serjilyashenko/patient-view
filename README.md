@@ -25,7 +25,7 @@ npm install
 
 ## Production mode
 
-The result of the production mode is `public` folder. It includes `index.html` and `bundle.js`.
+The result of the production mode is `build` folder. It includes `index.html` and `bundle.js`.
 The JS file is compressed.
 
 * For project building in production mode execute the next command:
